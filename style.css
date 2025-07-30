@@ -1,0 +1,109 @@
+:root {
+    --background: #0c0c0c;
+    --color-txt: #fff;
+    --color-primary: #67ffd1;
+    --color-secondary: #c0f0e2;
+    --animation-duration: 1s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    background: var(--background);
+    color: var(--color-txt);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    z-index: 1;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 8rem;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.3;
+}
+
+.circle-1 {
+    width: 300px;
+    height: 300px;
+    background-color: var(--color-primary);
+    top: -100px;
+    left: -100px;
+}
+
+.circle-2 {
+    width: 200px;
+    height: 200px;
+    background-color: var(--color-secondary);
+    bottom: -50px;
+    right: -50px;
+}
+
+.circle-3 {
+    width: 150px;
+    height: 150px;
+    background-color: var(--color-primary);
+    bottom: 20%;
+    left: 30%;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes floating {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(-20px);}
+    100% {transform: translateY(0px);}
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn var(--animation-duration) ease forwards;
+    animation-delay: calc(var(--animation-duration) * 0.5);
+}
+
+.floating {
+    animation: floating 4s ease-in-out infinite;
+}
+
+.floating-delay {
+    animation: floating 4s ease-in-out infinite;
+    animation-delay: 1s;
+}
